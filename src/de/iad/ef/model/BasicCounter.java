@@ -18,7 +18,7 @@ public abstract class BasicCounter {
         this.counted=initialCount;
         this.initialCount=initialCount;
     }
-    //Getter unde Setter
+    //Getter und Setter
     protected void setCount(Integer count){
     this.counted=count;
 

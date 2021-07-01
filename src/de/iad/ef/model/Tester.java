@@ -28,21 +28,32 @@ class TestSuiteApp {
         }
     }*/
 
-        BasicCounterTest Testumgebung = new BasicCounterTest();
+        /*BasicCounterTest Testumgebung = new BasicCounterTest();
 
-        //testsBasicCounter(Testumgebung);
-
-      /*  TestParameterKonstruktor(Testumgebung);
-        System.out.println();
-        TestSetundReset(Testumgebung);
-*/
         LimitedCounterTest testumgebung = new LimitedCounterTest();
-
-    /*    testStandart_Konstruktor_MaximumIs_MaximumReached(testumgebung);*/
         LimitedCounterTest.Tester tester= testumgebung.new Tester(-10,42);
-        System.out.println("Test Standard Konstruktor erwartet -10 und geliefert wird -10"+
-                (tester.currentCount()==-10 ? " ok":"fehler"));
-        System.out.println("Test maximumIs erwartet -10 und geliefert wird 999"+
+        RolloverCounter counter = new RolloverCounter();*/
+        new StopCounterTest().start();
+
+        /*System.out.println("Test Standard Konstruktor erwartet 0" +
+                (counter.currentCount()==0 ? " ok":"fehler"));
+        counter.setCount(999);
+        System.out.println("Test Standard Obergrenze erwartet 999" +
+                (counter.currentCount()==999 ? " ok":"fehler"));
+        counter.count();
+        System.out.println("Test Überlauf erwartet 0" +
+                (counter.currentCount()==0 ? " ok":"fehler"));
+
+
+
+        testsBasicCounter(Testumgebung);
+        testStandart_Konstruktor_MaximumIs_MaximumReached(tester);*/
+
+    }
+
+    private static void testStandart_Konstruktor_MaximumIs_MaximumReached(LimitedCounterTest.Tester tester) {
+
+        System.out.println("Test maximumIs erwartet -10 und geliefert wird -10"+
                 (tester.minimumIs()==-10 ? " ok":"fehler"));
         System.out.println("Test is maximumreached erwarte true und geliefert wird true"+
                 (tester.isMinimumReached()==true ?" ok":"fehler"));
@@ -119,9 +130,34 @@ class LimitedCounterTest{
         }
     }
 }
-class RollOverCounterTest{
+class StopCounterTest{
+     public void start() {
+         RolloverCounter tester = new RolloverCounter();
+         System.out.println("Test Standard Konstruktor erwartet 0 und geliefert wird 0"+
+                 (tester.minimumIs()==-0 ? " ok":"fehler"));
+         System.out.println("Test is Obergrenze erwarte 999 und geliefert wird 999"+
+                 (tester.isMinimumReached()==true ?" ok":"fehler"));
+         tester.count();
+         /*System.out.println("Test isMaximumReached erwarted false und geliefert wird false"+
+                 (tester.isMinimumReached()==false ? " ok":"fehler"));
+         System.out.println("Test Standard Konstruktor erwartet 0 und geliefert wird 0"+
+                 (tester.currentCount()==0 ? " ok":"fehler"));
+         System.out.println("Test maximumIs erwartet 999 und geliefert wird 999"+
+                 (tester.maximumIs()==999 ? " ok":"fehler"));
+         System.out.println("Test is maximumreached erwarte false und geliefert wird false"+
+                 (tester.isMaximumReached()==false ?" ok":"fehler"));
+         tester.setCount(999);
+         System.out.println("Test isMaximumReached erwarted true und geliefert wird true"+
+                 (tester.isMaximumReached()==true ? " ok":"fehler"));*/
 
+        }
+    }
+    class WarningCounterTest(){
+    public void allgemeineTest() {
+    }
 }
+
+
 
 
 

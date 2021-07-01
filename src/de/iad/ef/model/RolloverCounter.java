@@ -2,19 +2,29 @@ package de.iad.ef.model;
 
 public class RolloverCounter extends LImitedCounter {
 
+public RolloverCounter(){
+    super();
+    }
+
+public RolloverCounter(Integer mincount, Integer maxcount){
+    super(mincount,maxcount);
+
+}
 
     @Override
     public void count() {
-        if (super.currentCount().equals(super.maximumIs())) {
-            setCount(minimumIs());
-        } else super.count();
+        if (super.isMaximumReached()) {
+            this.setCount(minimumIs());
+            return;
+        } super.count();
     }
 
     @Override
     public void uncount() {
-        if (super.currentCount().equals(super.minimumIs())) {
-            setCount(maximumIs());
+        if (super.isMinimumReached()) {
+            this.setCount(maximumIs());
         } else super.uncount();
     }
 }
+
 
