@@ -1,7 +1,9 @@
+/*
 package de.iad.ef.model;
 class TestSuiteApp {
     public static void main(String[] args) {
-    /*BasicCounter counter= new BasicCounter() {
+    */
+/*BasicCounter counter= new BasicCounter() {
         @Override
         protected void setCount(Integer count) {
             super.setCount(count);
@@ -26,16 +28,20 @@ class TestSuiteApp {
         public void reset() {
             super.reset();
         }
-    }*/
+    }*//*
 
-        /*BasicCounterTest Testumgebung = new BasicCounterTest();
+
+        */
+/*BasicCounterTest Testumgebung = new BasicCounterTest();
 
         LimitedCounterTest testumgebung = new LimitedCounterTest();
         LimitedCounterTest.Tester tester= testumgebung.new Tester(-10,42);
-        RolloverCounter counter = new RolloverCounter();*/
+        RolloverCounter counter = new RolloverCounter();*//*
+
         new StopCounterTest().start();
 
-        /*System.out.println("Test Standard Konstruktor erwartet 0" +
+        */
+/*System.out.println("Test Standard Konstruktor erwartet 0" +
                 (counter.currentCount()==0 ? " ok":"fehler"));
         counter.setCount(999);
         System.out.println("Test Standard Obergrenze erwartet 999" +
@@ -47,7 +53,8 @@ class TestSuiteApp {
 
 
         testsBasicCounter(Testumgebung);
-        testStandart_Konstruktor_MaximumIs_MaximumReached(tester);*/
+        testStandart_Konstruktor_MaximumIs_MaximumReached(tester);*//*
+
 
     }
 
@@ -138,7 +145,8 @@ class StopCounterTest{
          System.out.println("Test is Obergrenze erwarte 999 und geliefert wird 999"+
                  (tester.isMinimumReached()==true ?" ok":"fehler"));
          tester.count();
-         /*System.out.println("Test isMaximumReached erwarted false und geliefert wird false"+
+         */
+/*System.out.println("Test isMaximumReached erwarted false und geliefert wird false"+
                  (tester.isMinimumReached()==false ? " ok":"fehler"));
          System.out.println("Test Standard Konstruktor erwartet 0 und geliefert wird 0"+
                  (tester.currentCount()==0 ? " ok":"fehler"));
@@ -148,7 +156,8 @@ class StopCounterTest{
                  (tester.isMaximumReached()==false ?" ok":"fehler"));
          tester.setCount(999);
          System.out.println("Test isMaximumReached erwarted true und geliefert wird true"+
-                 (tester.isMaximumReached()==true ? " ok":"fehler"));*/
+                 (tester.isMaximumReached()==true ? " ok":"fehler"));*//*
+
 
         }
     }
@@ -156,6 +165,7 @@ class StopCounterTest{
     public void allgemeineTest() {
     }
 }
+*/
 
 
 
